@@ -10,6 +10,8 @@
 #include "spd/spd_util.h"
 #include "spd/spd.h"
 
+#define K4EBE304EB_MEM_ID 0x2
+
 void mainboard_memory_init_params(FSPM_UPD *mupd)
 {
 	FSP_M_CONFIG *mem_cfg = &mupd->FspmConfig;
@@ -28,7 +30,8 @@ void mainboard_memory_init_params(FSPM_UPD *mupd)
 		GPIO_MEM_CONFIG_2,
 		GPIO_MEM_CONFIG_3,
 	};
-	const int spd_idx = gpio_base2_value(spd_gpios, ARRAY_SIZE(spd_gpios));
+	/* Forced to Load K4EBE304EB-EGCG SPD hex file */
+	const int spd_idx = K4EBE304EB_MEM_ID;
 
 	mem_cfg->MemorySpdDataLen = SPD_LEN;
 	mem_cfg->DqPinsInterleaved = FALSE;
