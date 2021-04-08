@@ -30,7 +30,7 @@ void mainboard_memory_init_params(FSPM_UPD *mupd)
 		GPIO_MEM_CONFIG_2,
 		GPIO_MEM_CONFIG_3,
 	};
-	/* Forced to Load K4EBE304EB-EGCG SPD hex file */
+	/* Force to Load K4EBE304EB-EGCG SPD hex file */
 	const int spd_idx = K4EBE304EB_MEM_ID;
 
 	mem_cfg->MemorySpdDataLen = SPD_LEN;
